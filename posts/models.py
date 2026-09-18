@@ -15,7 +15,7 @@ class Post(models.Model):
     post_type = models.CharField(choices=PostType.choices,max_length=5)
 
     title = models.CharField(max_length=250)
-    body = models.TextField()
+    image = models.ImageField(upload_to='posts/')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
